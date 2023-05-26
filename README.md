@@ -2,7 +2,7 @@
 
 This Python script helps you get the GitHub repository as Zip Archive
 
-In this tech hub, the python code downloads the github repository(private/public) content (for a particular repo) as a zip archive. 
+In this tech hub, the python code downloads the github repository(private/public) content (for a particular repo) as a zip archive(repo.zip). 
 
 ## Steps for Execution
 

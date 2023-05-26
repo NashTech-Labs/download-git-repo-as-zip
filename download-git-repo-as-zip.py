@@ -46,25 +46,6 @@ def get_github_repo(
     return outfile
 
 
-# # Extract zip file
-# def extract_zip_file(input_file: str, output_folder: str) -> int:
-#     """extract zip file
-
-#     Args:
-#         input_file (str): input file from which to extract
-#         output_file (str): output file in which to extract
-
-#     Returns:
-#         int: return 0 if successful
-#     """
-#     print(f"Extracting {input_file} file \n")
-#     with ZipFile(input_file, "r") as zObject:
-#         # Extracting all the members of the zip into a specific location.
-#         zObject.extractall(path=output_folder)
-#     print(f"Zip extracted. Output folder: {output_folder}")
-#     return 0
-
-
 # main function
 def main():
     owner = input("Enter repository owner name: ")

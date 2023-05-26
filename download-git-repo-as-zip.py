@@ -1,10 +1,11 @@
 import os
 import urllib3
+from zipfile import ZipFile
 
 
 # Get GitHub Repo as Zip
 def get_github_repo(
-    owner: str, repo: str, ref: str, token: str, outfile: str = "repo.zip"
+    owner: str, repo: str, ref: str, token: str = '', outfile: str = "repo.zip"
 ) -> str:
     """down the git repository as a zip
 
@@ -25,12 +26,19 @@ def get_github_repo(
     # api url for downloading repository as zip file
     url = f"https://api.github.com/repos/{owner}/{repo}/zipball/{ref}"
 
+    headers ={}
+    
+    if token == '':
+        headers={}
     # api request to download zip file (github repo)
+    else:
+        headers={"Authorization": "Bearer " + token}
+        
     r = http.request(
         "GET",
         url=url,
         preload_content=False,
-        headers={"Authorization": "Bearer " + token},
+        headers=headers
     )
 
     with open(outfile, "wb") as out:
